@@ -35,9 +35,9 @@ const Home = () => {
 
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 p-4 gap-5 ">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 p-4 gap-5 w-full justify-center items-centerr">
             {product?.map((prod) => (
-                <div className="card w-[300px] bg-slate-50 p-6 rounded-md shadow-md" key={prod.id}>
+                <div className="card lg:w-[300px] bg-slate-50 p-6 rounded-md shadow-md " key={prod.id}>
                     <div className="flex items-center justify-center">
                         <img
                             className="w-28  h-36 mb-6"
