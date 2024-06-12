@@ -39,29 +39,30 @@ const Cart = () => {
     }
 
     return (
-        <div className="flex gap-x-3">
-            <div className="w-3/4 p-3">
+        <div className="lg:flex  gap-x-3">
+            <div className="lg:w-3/4 p-3">
+                <h2 className="lg:bg-orange-700 bg-red-700 w-full text-center lg:p-4 p-3 text-white font-semibold text-2xl">{items == 0 && "There are no Product Added"}</h2>
                 {
                     items.map(item => (
                         <div
-                            className="lg:flex justify-evenly text-center items-center bg-yellow-50 mb-3 rounded:lg"
+                            className="lg:flex flex justify-evenly text-center items-center bg-yellow-50 mb-3 rounded:lg"
                             key={item.id}>
                             <img
                                 className="w-16 h-16 p-2 mr-8"
                                 src={item.image}
                                 alt="product Image" />
-                            <div className="bg-slate-100 px-4 py-1 w-3/4 rounded justify-evenly flex ">
-                                <span className="">Product Name : {item.title.slice(0, 15)}</span>
+                            <div className="bg-slate-100 lg:px-4 lg:py-1 lg:w-3/4 rounded lg:justify-evenly flex ">
+                                <span className="me-2">Product Name : {item.title.slice(0, 15)}</span>
                                 <span>Price : $ <span className="font-semibold ">{item.price}</span></span>
                             </div>
                             <div>
-                                <button onClick={() => handleRemove(item)}>delete</button>
+                                <button className="bg-yellow-500 hover:bg-yellow-700 px-2 py-1 text-white rounded mx-1" onClick={() => handleRemove(item)}>delete</button>
                             </div>
                         </div>
                     ))
                 }
             </div>
-            <div className="w-1/4 p-3">
+            <div className="lg:w-1/4 p-3">
                 <h2 className="bg-slate-100 mb-2 p-3 text-wrap ">Total Product : {items?.length}</h2>
                 <h2 className="bg-slate-100 mb-2 p-3 text-wrap ">Product Price : $  {amount.toFixed()}</h2>
                 <h2 className="bg-slate-100 mb-2 p-3 text-wrap ">Delevary Charge   : $ {delevaryCharge}</h2>
@@ -70,7 +71,7 @@ const Cart = () => {
                 <h2 className="bg-slate-100 mb-2 p-3 text-wrap ">Total Payble Amount   : $ {totalPrice.toFixed()}</h2>
                 <div className="">
                     <button
-                        onClick={()=> alert('Payment initialize ')}
+                        onClick={() => alert('Payment initialize ')}
                         className=" w-full bg-zinc-500 text-white px-5 py-1 rounded  hover:bg-zinc-600 my-2">Payment</button>
                 </div>
             </div>
